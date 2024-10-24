@@ -1,44 +1,60 @@
-createCanvas(200, 200);
-
-background("white");
-
+body {
+    color: white;
+    background: black;
+    margin: 0px;
+    font-family: "Chakra Petch", sans-serif;
+    margin-bottom: 100px;
 }
 
-function draw() {
-
-stroke("orange");
-
-triangle(50, 150, 100, 50, 150, 150);
-
-} cor;
-let circuloX; // horizontal
-let circuloY; // vertical
-
-function setup() {
-  createCanvas(400, 400);
-  background(color(100, 0 , 0));
-  cor = color(random(0, 255), random(0, 255), random(0, 255));
-  
-  circuloX = [0, 0, 0];
-  circuloY = [random(height), random(height), random(height)];
+header {
+    border-bottom: solid 2px rgb(42, 122, 228);
+    padding: 20px;
+    font-size: 32px;
+    color: rgb(42, 122, 228);
 }
 
-function draw() {
-  
-  fill(cor);
-  
-  for(let contador in circuloX) {
-    circle(circuloX[contador], circuloY[contador], 50);    
-    circuloX[contador]+= random(0,3);
-    circuloY[contador]+= random(-3,3); 
-    
-    if(circuloX[contador] >= width){
-      circuloX[contador] = 0;
-      circuloY[contador] = random(height);
-    }
-  }
-  
-  if(mouseIsPressed){
-    cor = color(random(0, 255), random(0, 255), random(0, 255), random(0, 100));
-  }
+.chamada {
+    background: rgb(184, 156, 213);
+    padding-bottom: 80px;
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.chamada-texto {
+    margin-right: 5%;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.categoria-videos {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.categoria {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 50px;
+}
+
+.categoria-videos img {
+    opacity: 0.5;
+    height: 200px;
+}
+
+.categoria-videos img:hover {
+    opacity: 1.0;
+    border: 3px solid green;
+}
+
+.categoria h2 {
+    color: rgb(42, 122, 228);
 }
